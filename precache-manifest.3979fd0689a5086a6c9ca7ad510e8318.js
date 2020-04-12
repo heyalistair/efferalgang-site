@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6561206d13dd7cf1587090a6ef2e72ee",
+    "revision": "babfaac6ef8e358d59e5c624d900a297",
     "url": "/efferalgang-site/index.html"
   },
   {
