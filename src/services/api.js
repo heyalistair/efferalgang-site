@@ -1,8 +1,10 @@
 class Api {
 
+    API_URL = "http://134.122.54.81:8080";
+
     getCurrentShowId() {
 
-        return fetch('http://127.0.0.1:8080/live')
+        return fetch(this.API_URL + "/live")
             .then(res => res.json());
 
     }
