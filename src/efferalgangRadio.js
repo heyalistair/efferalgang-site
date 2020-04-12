@@ -83,7 +83,7 @@ class EfferalGangInfo extends React.Component {
     }
 
     componentDidMount() {
-
+        this.getVideo();
         this.interval = setInterval(() => this.getVideo(), 20000);
 
     }
