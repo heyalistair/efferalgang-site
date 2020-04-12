@@ -1,6 +1,6 @@
 class Api {
 
-    API_URL = "http://134.122.54.81:8080";
+    API_URL = "https://64.225.81.86:8080";
 
     getCurrentShowId() {
 
