@@ -49,7 +49,7 @@ class EfferalGangInfoView extends React.Component {
         return (
             <div>
                 {is_live ? <p>Radio EfferalGang is live!</p> :
-                    <p>Radio EfferalGang is not broadcasting live right now. Quel dommage.</p>}
+                    <p>Radio EfferalGang fait dodo, mais nos archives jamais</p>}
                 <ReactPlayer url={`https://www.youtube.com/watch?v=${video_id}`} playing/>
             </div>
         );
@@ -83,10 +83,33 @@ class EfferalGangInfo extends React.Component {
     }
 
     componentDidMount() {
-        const video = Api.getCurrentShowId()
+
+        this.interval = setInterval(() => this.getVideo(), 20000);
+
+    }
+
+    getVideo() {
+        Api.getCurrentShowId()
             .then((data) => {
                 console.log("data: " + JSON.stringify(data));
-                this.setState({data: {...data}});
+                const { video_id, is_live } = data;
+
+                if (!this.state.data) {
+                    // there is no state, so set the state to start playing a video
+                    this.setState({data: {...data}});
+                } else if (this.state.data.is_live && !is_live) {
+                    // we've just switched from live to archive so update the state
+                    this.setState({data: {...data}});
+                } else if (!this.state.data.is_live && is_live) {
+                    // we've just switched from archive to live
+                    this.setState({data: {...data}});
+                } else {
+                    // if one live is being handed off to another
+                    if (this.state.data.is_live && is_live && (this.state.data.video_id !== video_id)) {
+                        this.setState({data: {...data}});
+                    }
+                }
+
             })
             .catch((error) => {
                 this.setState({error: true});
