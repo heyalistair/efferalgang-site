@@ -3,10 +3,10 @@ import {css} from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 import Api from "./services/api";
 import ReactPlayer from "react-player";
+import './efferalGangRadio.css';
+
 
 const override = css`
-  display: flex;
-  margin: 0 auto;
   border-color: red;
   alignItems: 'center';
   justifyContent: 'center';
@@ -64,8 +64,12 @@ class EfferalGangRadioView extends React.Component {
             videoId = data.archive_player.current.id;
             t = data.archive_player.current.playhead;
             return (
-                <div>
-                    <ReactPlayer pip={false} url={`https://www.youtube.com/watch?v=${videoId}&t=${t}`} playing/>
+                <div className='EfferalGangRadio'>
+                    <ReactPlayer
+                        width='100%'
+                        height='100%'
+                        pip={false}
+                        url={`https://www.youtube.com/watch?v=${videoId}&t=${t}`} playing/>
                 </div>
             );
         }
@@ -77,8 +81,12 @@ class EfferalGangRadioView extends React.Component {
         }
 
         return (
-            <div>
-                <ReactPlayer pip={false} url={`https://www.youtube.com/watch?v=${videoId}`} playing/>
+            <div className='EfferalGangRadio'>
+                <ReactPlayer
+                    width='100%'
+                    height='100%'
+                    pip={false}
+                    url={`https://www.youtube.com/watch?v=${videoId}`} playing/>
             </div>
         );
 
