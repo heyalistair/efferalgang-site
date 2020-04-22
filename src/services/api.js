@@ -1,6 +1,7 @@
 class Api {
 
-    API_URL = "https://alistairj.com/";
+    // API_URL = "https://alistairj.com";
+    API_URL = "http://localhost:8080";
 
     getCurrentShowId() {
 

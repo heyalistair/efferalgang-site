@@ -12,6 +12,14 @@ const override = css`
   justifyContent: 'center';
 `;
 
+const Status = {
+    Archive: "ARCHIVE",
+    Upcoming: "UPCOMING",
+    Live: "LIVE"
+}
+
+const waitingMusic = "blOGHOU0YGk";
+
 class AwesomeComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -34,7 +42,7 @@ class AwesomeComponent extends React.Component {
     }
 }
 
-class EfferalGangInfoView extends React.Component {
+class EfferalGangRadioView extends React.Component {
 
     renderLoading() {
         return (<AwesomeComponent/>);
@@ -45,21 +53,41 @@ class EfferalGangInfoView extends React.Component {
     }
 
     renderResult() {
-        const {video_id, is_live} = this.props.data;
+
+        const { data } = this.props;
+        const { status } = data;
+
+        let videoId = "";
+        let t = 0;
+
+        if (status === Status.Archive) {
+            videoId = data.archive_player.current.id;
+            t = data.archive_player.current.playhead;
+            return (
+                <div>
+                    <ReactPlayer pip={false} url={`https://www.youtube.com/watch?v=${videoId}&t=${t}`} playing/>
+                </div>
+            );
+        }
+
+        if (status === Status.Upcoming) {
+            videoId = waitingMusic;
+        } else if (status === Status.Live) {
+            videoId = data.live_player.current.id;
+        }
+
         return (
             <div>
-                {is_live ? <p>Radio EfferalGang is live!</p> :
-                    <p>Radio EfferalGang fait dodo, mais nos archives jamais</p>}
-                <ReactPlayer url={`https://www.youtube.com/watch?v=${video_id}`} playing/>
+                <ReactPlayer pip={false} url={`https://www.youtube.com/watch?v=${videoId}`} playing/>
             </div>
         );
+
     }
 
     render() {
         const {data, error} = this.props;
 
         if (data) {
-            console.log("data: " + JSON.stringify(data));
             return this.renderResult();
         } else if (error) {
             return this.renderError();
@@ -69,7 +97,7 @@ class EfferalGangInfoView extends React.Component {
     }
 }
 
-class EfferalGangInfo extends React.Component {
+class EfferalGangRadio extends React.Component {
     state = {
         data: null,
         error: null,
@@ -78,7 +106,7 @@ class EfferalGangInfo extends React.Component {
 
     render() {
         return (
-            <EfferalGangInfoView {...this.state} />
+            <EfferalGangRadioView {...this.state} />
         );
     }
 
@@ -91,21 +119,23 @@ class EfferalGangInfo extends React.Component {
     getVideo() {
         Api.getCurrentShowId()
             .then((data) => {
-                console.log("data: " + JSON.stringify(data));
-                const { video_id, is_live } = data;
+
+                console.log("STATUS: " + JSON.stringify(data.status));
 
                 if (!this.state.data) {
                     // there is no state, so set the state to start playing a video
-                    this.setState({data: {...data}});
-                } else if (this.state.data.is_live && !is_live) {
-                    // we've just switched from live to archive so update the state
-                    this.setState({data: {...data}});
-                } else if (!this.state.data.is_live && is_live) {
+                    this.setState({data: {...data}})
+                }
+
+                const incomingStatus = data.status;
+                const currentStatus = this.state.data.status;
+
+                if (incomingStatus !== currentStatus) {
                     // we've just switched from archive to live
                     this.setState({data: {...data}});
-                } else {
+                } else if (incomingStatus === Status.Live && currentStatus === Status.Live) {
                     // if one live is being handed off to another
-                    if (this.state.data.is_live && is_live && (this.state.data.video_id !== video_id)) {
+                    if (data.live_player.current.id === this.state.data.live_player.current.id) {
                         this.setState({data: {...data}});
                     }
                 }
@@ -119,4 +149,4 @@ class EfferalGangInfo extends React.Component {
 }
 
 
-export default EfferalGangInfo;
+export default EfferalGangRadio;

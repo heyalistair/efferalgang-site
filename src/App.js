@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import EfferalGangInfo from "./efferalgangRadio";
+import EfferalGangRadio from "./efferalGangRadio";
 
 function App() {
   return (
     <div className="App">
-      <EfferalGangInfo/>
+      <EfferalGangRadio/>
     </div>
   );
 }
