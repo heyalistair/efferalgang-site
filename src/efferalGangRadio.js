@@ -143,7 +143,12 @@ class EfferalGangRadio extends React.Component {
                     this.setState({data: {...data}});
                 } else if (incomingStatus === Status.Live && currentStatus === Status.Live) {
                     // if one live is being handed off to another
-                    if (data.live_player.current.id === this.state.data.live_player.current.id) {
+                    if (data.live_player.current.id !== this.state.data.live_player.current.id) {
+                        this.setState({data: {...data}});
+                    }
+                } else if (incomingStatus === Status.Archive && currentStatus === Status.Archive) {
+                    // if one archive is being handed off to another
+                    if (data.archive_player.current.id !== this.state.data.archive_player.current.id) {
                         this.setState({data: {...data}});
                     }
                 }
