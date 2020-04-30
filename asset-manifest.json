@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/efferalgang-site/static/css/main.1fad7ef4.chunk.css",
-    "main.js": "/efferalgang-site/static/js/main.c2caa76d.chunk.js",
-    "main.js.map": "/efferalgang-site/static/js/main.c2caa76d.chunk.js.map",
+    "main.js": "/efferalgang-site/static/js/main.f4eae919.chunk.js",
+    "main.js.map": "/efferalgang-site/static/js/main.f4eae919.chunk.js.map",
     "runtime-main.js": "/efferalgang-site/static/js/runtime-main.315567ff.js",
     "runtime-main.js.map": "/efferalgang-site/static/js/runtime-main.315567ff.js.map",
     "static/js/2.698254e6.chunk.js": "/efferalgang-site/static/js/2.698254e6.chunk.js",
     "static/js/2.698254e6.chunk.js.map": "/efferalgang-site/static/js/2.698254e6.chunk.js.map",
     "index.html": "/efferalgang-site/index.html",
-    "precache-manifest.3c9ebe1a76d216b9cec46faa2d9f64d1.js": "/efferalgang-site/precache-manifest.3c9ebe1a76d216b9cec46faa2d9f64d1.js",
+    "precache-manifest.3168e5c6d38b5b10b1357453b98c17c2.js": "/efferalgang-site/precache-manifest.3168e5c6d38b5b10b1357453b98c17c2.js",
     "service-worker.js": "/efferalgang-site/service-worker.js",
     "static/css/main.1fad7ef4.chunk.css.map": "/efferalgang-site/static/css/main.1fad7ef4.chunk.css.map",
     "static/js/2.698254e6.chunk.js.LICENSE.txt": "/efferalgang-site/static/js/2.698254e6.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.315567ff.js",
     "static/js/2.698254e6.chunk.js",
     "static/css/main.1fad7ef4.chunk.css",
-    "static/js/main.c2caa76d.chunk.js"
+    "static/js/main.f4eae919.chunk.js"
   ]
 }
