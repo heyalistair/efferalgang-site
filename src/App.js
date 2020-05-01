@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import EfferalGangRadio from "./efferalGangRadio";
+import EfferalGangRadioPlayerChat from "./efferalGangRadio";
 
 function App() {
   return (
-    <EfferalGangRadio/>
+    <EfferalGangRadioPlayerChat/>
   );
 }
 

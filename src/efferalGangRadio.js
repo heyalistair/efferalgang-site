@@ -64,14 +64,12 @@ class EfferalGangRadioView extends React.Component {
             videoId = data.archive_player.current.id;
             t = data.archive_player.current.playhead;
             return (
-                <div className='EfferalGangRadio'>
                     <ReactPlayer
-                        width='100%'
+                        width='75%'
                         height='100%'
                         pip={false}
                         controls={true}
                         url={`https://www.youtube.com/watch?v=${videoId}&t=${t}`} playing/>
-                </div>
             );
         }
 
@@ -82,14 +80,12 @@ class EfferalGangRadioView extends React.Component {
         }
 
         return (
-            <div className='EfferalGangRadio'>
                 <ReactPlayer
-                    width='100%'
+                    width='75%'
                     height='100%'
                     pip={false}
                     controls={true}
                     url={`https://www.youtube.com/watch?v=${videoId}`} playing/>
-            </div>
         );
 
     }
@@ -130,7 +126,7 @@ class EfferalGangRadio extends React.Component {
         Api.getCurrentShowId()
             .then((data) => {
 
-                console.log("STATUS: " + JSON.stringify(data.status));
+                console.log("player status: " + JSON.stringify(data.status));
 
                 if (!this.state.data) {
                     // there is no state, so set the state to start playing a video
@@ -163,5 +159,15 @@ class EfferalGangRadio extends React.Component {
     }
 }
 
+class EfferalGangRadioPlayerChat extends React.Component {
+    render() {
+        return (
+            <div className='EfferalGangRadioPlayerChat'>
+                <EfferalGangRadio className=''/>
+                <iframe title='radioefferalgang-chat' src='https://go.arena.im/embed/chat/efferalgang-radio/efferalgang-radio-global' className='iframe-chat'></iframe>
+            </div>
+        )
+    }
+}
 
-export default EfferalGangRadio;
+export default EfferalGangRadioPlayerChat;
