@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/efferalgang-site/precache-manifest.ae6c42787fc4a5cdaa587cb256036606.js"
+  "/efferalgang-site/precache-manifest.4a1807c740e0a616737605406300830d.js"
 );
 
 self.addEventListener('message', (event) => {
