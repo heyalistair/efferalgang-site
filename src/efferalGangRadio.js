@@ -18,7 +18,7 @@ const Status = {
     Live: "LIVE"
 }
 
-const waitingMusic = "blOGHOU0YGk";
+const waitingMusic = "9v9-Nw4nAZg";
 
 class AwesomeComponent extends React.Component {
     constructor(props) {
