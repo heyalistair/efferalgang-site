@@ -26,8 +26,7 @@ function App() {
                                 'border': 0,
                                 'width': '1px',
                                 'min-width': '100%',
-                                'height': '100%',
-                                'border-radius': '4px'
+                                'height': '100%'
                             }}/>
                 </Route>
                 <Route path="/">
