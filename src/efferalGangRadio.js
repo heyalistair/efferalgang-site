@@ -84,7 +84,7 @@ class EfferalGangRadioView extends React.Component {
                         pip={false}
                         controls={false}
                         loop={true}
-                        url={`https://www.youtube.com/watch?v=${videoId}`} playing/>
+                        url={`https://www.youtube.com/watch?v=${waitingMusic}`} playing/>
                 </div>
             );
         } else if (status === Status.Live) {
