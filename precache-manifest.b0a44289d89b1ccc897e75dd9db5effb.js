@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "135db54a542a28e9ef9e016ed03257c1",
+    "revision": "b29ea6a33c18240765ff7996400b7b76",
     "url": "/efferalgang-site/index.html"
   },
   {
-    "revision": "c84883801db2877c79a0",
+    "revision": "41fc7e759a80d9af3bfb",
     "url": "/efferalgang-site/static/css/main.33c0456d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/efferalgang-site/static/js/2.cab8368f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c84883801db2877c79a0",
-    "url": "/efferalgang-site/static/js/main.7bf1efc9.chunk.js"
+    "revision": "41fc7e759a80d9af3bfb",
+    "url": "/efferalgang-site/static/js/main.efef3de5.chunk.js"
   },
   {
     "revision": "c2b0e4ea16e8a4bd323d",
