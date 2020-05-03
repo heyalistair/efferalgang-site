@@ -1,23 +1,30 @@
 import React from 'react';
 import './App.css';
 import EfferalGangRadio from "./efferalGangRadio";
+import useScript from './hooks/useScript';
 import {
     HashRouter as Router,
     Switch,
     Route
 } from "react-router-dom";
 
+
+const ArenaEmbedChat = props => {
+    useScript('https://go.arena.im/public/js/arenachatlib.js?p=efferalgang-radio&e=efferalgang-radio-global');
+    // rest of your component
+
+    return (<div className="arena-chat"
+                 data-publisher="efferalgang-radio"
+                 data-chatroom="efferalgang-radio-global"
+                 data-position="in-page"/>);
+};
+
 function App() {
     return (
         <Router>
             <Switch>
                 <Route path="/chat">
-                    <div className="arena-chat"
-                         data-publisher="efferalgang-radio"
-                         data-chatroom="efferalgang-radio-global"
-                         data-position="in-page"/>
-                    <script async
-                            src="https://go.arena.im/public/js/arenachatlib.js?p=efferalgang-radio&e=efferalgang-radio-global"/>
+                    <ArenaEmbedChat/>
                 </Route>
                 <Route path="/ichat">
                     <iframe title="super-cool-efferalgang-iframe-chat"
