@@ -32,8 +32,7 @@ function App() {
                             style={{
                                 'border': 0,
                                 'width': '1px',
-                                'min-width': '100%',
-                                'height': '100%'
+                                'min-width': '100%'
                             }}/>
                 </Route>
                 <Route path="/">
