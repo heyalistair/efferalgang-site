@@ -18,7 +18,7 @@ const Status = {
     Live: "LIVE"
 }
 
-const waitingMusic = "blOGHOU0YGk";
+const waitingMusic = "9v9-Nw4nAZg";
 
 class AwesomeComponent extends React.Component {
     constructor(props) {
@@ -76,7 +76,17 @@ class EfferalGangRadioView extends React.Component {
         }
 
         if (status === Status.Upcoming) {
-            videoId = waitingMusic;
+            return (
+                <div className='EfferalGangRadio'>
+                    <ReactPlayer
+                        width='100%'
+                        height='100%'
+                        pip={false}
+                        controls={false}
+                        loop={true}
+                        url={`https://www.youtube.com/watch?v=${waitingMusic}`} playing/>
+                </div>
+            );
         } else if (status === Status.Live) {
             videoId = data.live_player.current.id;
         }
