@@ -137,7 +137,7 @@ class EfferalGangRadio extends React.Component {
     }
 
     getVideo() {
-        Api.getCurrentShowId()
+        Api.getPlayerInfo()
             .then((data) => {
 
                 console.log("STATUS: " + JSON.stringify(data.status));

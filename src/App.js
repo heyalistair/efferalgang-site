@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import EfferalGangRadio from "./efferalGangRadio";
+import LiveList from "./efferalGangLiveList";
 import useScript from './hooks/useScript';
 import {
     HashRouter as Router,
@@ -23,6 +24,9 @@ function App() {
     return (
         <Router>
             <Switch>
+                <Route path="/live">
+                    <LiveList/>
+                </Route>
                 <Route path="/chat">
                     <ArenaEmbedChat/>
                 </Route>
