@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/efferalgang-site/static/css/main.ffdc4529.chunk.css",
-    "main.js": "/efferalgang-site/static/js/main.919af3d6.chunk.js",
-    "main.js.map": "/efferalgang-site/static/js/main.919af3d6.chunk.js.map",
+    "main.js": "/efferalgang-site/static/js/main.2a5cc41f.chunk.js",
+    "main.js.map": "/efferalgang-site/static/js/main.2a5cc41f.chunk.js.map",
     "runtime-main.js": "/efferalgang-site/static/js/runtime-main.315567ff.js",
     "runtime-main.js.map": "/efferalgang-site/static/js/runtime-main.315567ff.js.map",
     "static/js/2.e466cf19.chunk.js": "/efferalgang-site/static/js/2.e466cf19.chunk.js",
     "static/js/2.e466cf19.chunk.js.map": "/efferalgang-site/static/js/2.e466cf19.chunk.js.map",
     "index.html": "/efferalgang-site/index.html",
-    "precache-manifest.29e97e7b96a1ecf3042422e636494cb5.js": "/efferalgang-site/precache-manifest.29e97e7b96a1ecf3042422e636494cb5.js",
+    "precache-manifest.8e18324ca5421bd357a28466c1db4aca.js": "/efferalgang-site/precache-manifest.8e18324ca5421bd357a28466c1db4aca.js",
     "service-worker.js": "/efferalgang-site/service-worker.js",
     "static/css/main.ffdc4529.chunk.css.map": "/efferalgang-site/static/css/main.ffdc4529.chunk.css.map",
     "static/js/2.e466cf19.chunk.js.LICENSE.txt": "/efferalgang-site/static/js/2.e466cf19.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.315567ff.js",
     "static/js/2.e466cf19.chunk.js",
     "static/css/main.ffdc4529.chunk.css",
-    "static/js/main.919af3d6.chunk.js"
+    "static/js/main.2a5cc41f.chunk.js"
   ]
 }
