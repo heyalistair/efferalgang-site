@@ -2,3 +2,39 @@
   width: 100px;
   height: 100%
 }
+
+.livelist-wrapper {
+  text-align: center;
+  height: 100%;
+  min-height: 100% !important;
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+.livelist {
+  width: 60%;
+  padding: 20px;
+  display: inline-block;
+  text-align: left;
+  border: 2px solid red;
+  border-radius: 25px;
+}
+
+.logo {
+  width: 100px
+}
+
+.text-input {
+  height: 40px;
+  max-width: 500px;
+  width: 80%;
+  margin-right: 30px;
+}
+
+.track-button {
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: bold;
+}
+

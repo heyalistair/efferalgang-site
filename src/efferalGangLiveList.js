@@ -1,6 +1,7 @@
 import React from "react";
 import Api from "./services/api";
 import './efferalGangLiveList.css';
+import logo from './img/logo.jpg';
 import moment from 'moment';
 
 class LiveListView extends React.Component {
@@ -19,7 +20,7 @@ class LiveListView extends React.Component {
         const videoId = this.props.data;
 
         if (videoId !== "") {
-            Api.trackNewVideoId(this.state.videoId)
+            Api.trackNewVideoId(encodeURIComponent(this.state.videoId))
         }
     }
 
@@ -50,42 +51,50 @@ class LiveListView extends React.Component {
         let t = 0;
 
         return (
-            <div className='EfferalGangRadio'>
+            <div className='livelist-wrapper'>
 
-                <h1>
-                    Current show
-                </h1>
+                <div>
+                    <img className='logo' src={logo}/>
+                </div>
+                <div className='livelist'>
 
-                {!!current ?
-                    <p key={current.id}> <span> <img src={current.thumbnail.url} className="thumbnail"/> </span>{current.title}</p>
-                    :
-                    <p> No lives! </p>}
+                    <h1>
+                        Current show
+                    </h1>
 
-                <h1>
-                    Upcoming shows
-                </h1>
+                    {!!current ?
+                        <p key={current.id}> <span> <img src={current.thumbnail.url} className="thumbnail"/> </span>{current.title}</p>
+                        :
+                        <p> No lives! </p>}
 
-                <ul>
-                    {shows}
-                </ul>
+                    <h1>
+                        Upcoming shows
+                    </h1>
 
-                <h2>
-                    Something missing?
-                </h2>
+                    <ul>
+                        {shows}
+                    </ul>
 
-                <p>
-                    I check for new shows listed on the efferalgang channel every hour at :59. If your show is missing
-                    and you can't wait that long, paste in the id of your show so that I can track it.
-                </p>
+                    <h2>
+                        Manually add an upcoming or live show
+                    </h2>
 
-                <input
-                    type="text"
-                    value={this.state.videoId}
-                    onChange={handleChange}
-                />
+                    <p>
+                        Something missing? I check for new shows listed on the efferalgang channel every hour at :59. If your show is missing
+                        and you can't wait that long, paste in the id of your show so that I can track it.
+                    </p>
 
-                <button onClick={track}> Track </button>
+                    <input
+                        type='text'
+                        class='text-input'
+                        value={this.state.videoId}
+                        onChange={handleChange}
+                        placeholder='Paste the URL, e.g. "https://studio.youtube.com/video/IjnIFdbHzvw/livestreaming"'
+                    />
 
+                    <button class='track-button' onClick={track}> Add show </button>
+
+                </div>
             </div>
             );
 
