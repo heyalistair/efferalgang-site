@@ -9,7 +9,13 @@ class LiveListView extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {videoId: ""};
+        this.state = {
+            videoId: '',
+            loading: false,
+            isVideoFound: false,
+            isNewShowAdded: false,
+            error: false
+        };
     }
 
     handleChange(event) {
@@ -20,7 +26,19 @@ class LiveListView extends React.Component {
         const videoId = this.props.data;
 
         if (videoId !== "") {
+            this.setState({videoId: '', loading: true});
+
             Api.trackNewVideoId(encodeURIComponent(this.state.videoId))
+                .then(data => {
+                    console.log(JSON.stringify(data));
+                    if (data.hasOwnProperty('video')) {
+                        console.log("data.new = " + data.new);
+                        this.setState({loading: false, isNewShowAdded: data.new, error: false, isVideoFound: true});
+                    } else {
+                        this.setState({loading: false, error: true, isVideoFound: false});
+                    }
+                }
+            );
         }
     }
 
@@ -49,6 +67,8 @@ class LiveListView extends React.Component {
 
         let videoId = "";
         let t = 0;
+
+        console.log('isNewShowAdded: ' + this.isNewShowAdded);
 
         return (
             <div className='livelist-wrapper'>
@@ -86,14 +106,38 @@ class LiveListView extends React.Component {
 
                     <input
                         type='text'
-                        class='text-input'
+                        className='text-input'
                         value={this.state.videoId}
                         onChange={handleChange}
+                        disabled={this.state.loading}
                         placeholder='Paste the URL, e.g. "https://studio.youtube.com/video/IjnIFdbHzvw/livestreaming"'
                     />
 
-                    <button class='track-button' onClick={track}> Add show </button>
+                    <button className='track-button' onClick={track}> Add show </button>
 
+                    { this.state.error ?
+                        <div>
+                            <img className={'gif-response'} src='https://media.giphy.com/media/14aUO0Mf7dWDXW/giphy.gif'/>
+                            <p className='error-message'> This is embarrassing but I don't understand what you have pasted into the text field. It can literally be any URL to your show or even the show ID itself. Are you sure this show exists and it's part of the Efferalgang channel?</p>
+                        </div>
+                        : null }
+
+
+                    { this.state.isVideoFound && !this.state.isNewShowAdded ?
+                        <div>
+                            <img className={'gif-response'} src='https://media.giphy.com/media/3o6ZtfraiyfUkNDwru/giphy.gif'/>
+                            <p className='warning-message'> I already knew about this show... so maybe there is not problem here? </p>
+                        </div>
+                        : null
+                    }
+
+                    { this.state.isVideoFound && this.state.isNewShowAdded ?
+                        <div>
+                            <img className={'gif-response'} src='https://media.giphy.com/media/YVpIaYgJ3lpMk/giphy.gif'/>
+                            <p className='success-message'> YOU DID IT. </p>
+                        </div>
+                        : null
+                    }
                 </div>
             </div>
             );
