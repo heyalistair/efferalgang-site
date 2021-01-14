@@ -15,9 +15,9 @@ const ArenaEmbedChat = props => {
     // rest of your component
 
     return (<div className="arena-chat"
-                 data-publisher="efferalgang-radio"
-                 data-chatroom="efferalgang-radio-global"
-                 data-position="in-page"/>);
+        data-publisher="efferalgang-radio"
+        data-chatroom="efferalgang-radio-global"
+        data-position="in-page" />);
 };
 
 function App() {
@@ -25,22 +25,30 @@ function App() {
         <Router>
             <Switch>
                 <Route path="/live">
-                    <LiveList/>
+                    <LiveList />
                 </Route>
                 <Route path="/chat">
-                    <ArenaEmbedChat/>
+                    <ArenaEmbedChat />
                 </Route>
                 <Route path="/ichat">
-                    <iframe title="super-cool-efferalgang-iframe-chat"
-                            src='https://go.arena.im/embed/chat/efferalgang-radio/efferalgang-radio-global'
-                            style={{
-                                'border': 0,
-                                'width': '1px',
-                                'min-width': '100%'
-                            }}/>
+                    <iframe
+                        title="super-cool-efferalgang-iframe-chat"
+                        src='https://go.arena.im/embed/chat/efferalgang-radio/efferalgang-radio-global'
+                        style={{
+                            'border': 0,
+                            'width': '1px',
+                            'min-width': '100%'
+                        }} />
+                </Route>
+                <Route path="/dchat">
+                    <iframe
+                        src="https://titanembeds.com/embed/689546540271927301"
+                        height="800"
+                        width="400"
+                        frameborder="0" />
                 </Route>
                 <Route path="/">
-                    <EfferalGangRadio/>
+                    <EfferalGangRadio />
                 </Route>
             </Switch>
         </Router>
