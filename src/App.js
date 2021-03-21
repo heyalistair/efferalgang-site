@@ -28,9 +28,6 @@ function App() {
                 <Route path="/live">
                     <LiveList />
                 </Route>
-                <Route path="/castr">
-                    <iframe src="https://player.castr.com/live_4fe7f180890311eb99623595db260c33" width="100%" height="100%" frameborder="0" scrolling="no" allow="autoplay" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-                </Route>
                 <Route path="/video">
                     <EfferalGangVideo />
                 </Route>
