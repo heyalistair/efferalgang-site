@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/efferalgang-site/static/css/main.79f2acc1.chunk.css",
-    "main.js": "/efferalgang-site/static/js/main.911aa29a.chunk.js",
-    "main.js.map": "/efferalgang-site/static/js/main.911aa29a.chunk.js.map",
+    "main.css": "/efferalgang-site/static/css/main.cd76b6e1.chunk.css",
+    "main.js": "/efferalgang-site/static/js/main.cc846087.chunk.js",
+    "main.js.map": "/efferalgang-site/static/js/main.cc846087.chunk.js.map",
     "runtime-main.js": "/efferalgang-site/static/js/runtime-main.315567ff.js",
     "runtime-main.js.map": "/efferalgang-site/static/js/runtime-main.315567ff.js.map",
-    "static/js/2.7e5c4f9f.chunk.js": "/efferalgang-site/static/js/2.7e5c4f9f.chunk.js",
-    "static/js/2.7e5c4f9f.chunk.js.map": "/efferalgang-site/static/js/2.7e5c4f9f.chunk.js.map",
+    "static/css/2.1abd5a2a.chunk.css": "/efferalgang-site/static/css/2.1abd5a2a.chunk.css",
+    "static/js/2.f970fdae.chunk.js": "/efferalgang-site/static/js/2.f970fdae.chunk.js",
+    "static/js/2.f970fdae.chunk.js.map": "/efferalgang-site/static/js/2.f970fdae.chunk.js.map",
     "index.html": "/efferalgang-site/index.html",
-    "precache-manifest.f9753a0751701eabe5e7b44a26a8211f.js": "/efferalgang-site/precache-manifest.f9753a0751701eabe5e7b44a26a8211f.js",
+    "precache-manifest.a093d8d0f5fd0d43f0dd8c3c5c3461ae.js": "/efferalgang-site/precache-manifest.a093d8d0f5fd0d43f0dd8c3c5c3461ae.js",
     "service-worker.js": "/efferalgang-site/service-worker.js",
-    "static/css/main.79f2acc1.chunk.css.map": "/efferalgang-site/static/css/main.79f2acc1.chunk.css.map",
-    "static/js/2.7e5c4f9f.chunk.js.LICENSE.txt": "/efferalgang-site/static/js/2.7e5c4f9f.chunk.js.LICENSE.txt",
+    "static/css/2.1abd5a2a.chunk.css.map": "/efferalgang-site/static/css/2.1abd5a2a.chunk.css.map",
+    "static/css/main.cd76b6e1.chunk.css.map": "/efferalgang-site/static/css/main.cd76b6e1.chunk.css.map",
+    "static/js/2.f970fdae.chunk.js.LICENSE.txt": "/efferalgang-site/static/js/2.f970fdae.chunk.js.LICENSE.txt",
     "static/media/logo.jpg": "/efferalgang-site/static/media/logo.4094076c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.315567ff.js",
-    "static/js/2.7e5c4f9f.chunk.js",
-    "static/css/main.79f2acc1.chunk.css",
-    "static/js/main.911aa29a.chunk.js"
+    "static/css/2.1abd5a2a.chunk.css",
+    "static/js/2.f970fdae.chunk.js",
+    "static/css/main.cd76b6e1.chunk.css",
+    "static/js/main.cc846087.chunk.js"
   ]
 }
