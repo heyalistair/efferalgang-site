@@ -11,7 +11,7 @@ class EfferalGangVideo extends Component {
             controls: true,
             fluid: true,
             sources: [{
-                src:"http://167.172.160.213/hls/stream.m3u8",
+                src:"https://alistairj.com/hls/stream.m3u8",
                 type:"application/x-mpegURL"
             }]
         }
