@@ -4,6 +4,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import Api from "./services/api";
 import ReactPlayer from "react-player";
 import './efferalGangRadio.css';
+import EfferalGangVideo from "./efferalGangVideo";
 
 
 const override = css`
@@ -88,20 +89,13 @@ class EfferalGangRadioView extends React.Component {
                 </div>
             );
         } else if (status === Status.Live) {
-            videoId = data.live_player.current.id;
+
+            return (
+                <div className='EfferalGangRadio'>
+                    <EfferalGangVideo/>
+                </div>
+            );
         }
-
-        return (
-            <div className='EfferalGangRadio'>
-                <ReactPlayer
-                    width='100%'
-                    height='100%'
-                    pip={false}
-                    controls={true}
-                    url={`https://www.youtube.com/watch?v=${videoId}`} playing/>
-            </div>
-        );
-
     }
 
     render() {
